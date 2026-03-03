@@ -122,7 +122,10 @@ text_sensor:
                     return id(media_source_sensor).has_state()
                         && id(media_source_sensor).state == "TV";
                 then:
-                  - lambda: 'id(is_tv_idle) = true;'
+                  - lambda: |-
+                      id(is_tv_idle) = true;
+                      lv_obj_set_style_bg_color(id(track_info_overlay), lv_color_make(0, 0, 0), 0);
+                      lv_obj_set_style_bg_color(id(artwork_bg_panel), lv_color_make(0, 0, 0), 0);
                   - script.stop: start_hide_track_info_timer
                   - script.execute: show_track_view
                   - lvgl.label.update:

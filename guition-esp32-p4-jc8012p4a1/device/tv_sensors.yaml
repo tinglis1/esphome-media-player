@@ -116,7 +116,10 @@ text_sensor:
                     return id(media_source_sensor).has_state()
                         && id(media_source_sensor).state == "TV";
                 then:
-                  - lambda: 'id(is_tv_idle) = true;'
+                  - lambda: |-
+                      id(is_tv_idle) = true;
+                      lv_obj_set_style_bg_color(id(accent_bg_panel), lv_color_make(0, 0, 0), 0);
+                      lv_obj_set_style_bg_color(id(artwork_bg_panel), lv_color_make(0, 0, 0), 0);
                   - lvgl.label.update:
                       id: media_title_label
                       text: "TV"
