@@ -12,6 +12,15 @@ After first boot, the display shows **"Set media player in device settings"** un
 
 The device updates immediately and keeps your choice across reboots. You can change it anytime. See [How do I configure a media player?](/troubleshooting#how-do-i-configure-a-media-player) if you need more detail.
 
+### TV source (optional)
+
+If your speaker has a "TV" source (e.g. a Sonos home theater setup), you can optionally configure a secondary media player so the controller shows now-playing info from the TV device when the speaker switches to the TV input. Most users can ignore this setting.
+
+1. Under **Configuration**, find the **Sonos Tv Source** field.
+2. Enter the entity ID of the media player that represents the TV source device (e.g. `media_player.apple_tv`).
+
+Leave the field empty if your speaker doesn't have a TV source or you don't want this feature — the controller works normally without it. The device reboots when this value is changed (the same as changing the primary media player). See [TV source mode](/features#tv-source-mode-optional) for how the feature works.
+
 ## Backlight and screensaver
 
 These are under the device's **Configuration** section. Values persist across reboots. Brightness adjusts automatically between day and night based on the `sun.sun` entity in Home Assistant.

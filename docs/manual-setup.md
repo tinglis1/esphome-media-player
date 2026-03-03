@@ -59,7 +59,7 @@ packages:
     refresh: 1s
 ```
 
-Adjust `name` and `friendly_name`. Optionally set `media_player` entity ID in substitutions, or leave it empty and set the media player later in Home Assistant.
+Adjust `name` and `friendly_name`. Optionally set `media_player` and `tv_media_player` entity IDs in substitutions, or leave them empty and set them later in Home Assistant. `tv_media_player` is only needed if your speaker has a TV source (see [TV source](/configurable-settings#tv-source)).
 
 ## Step 3: Set WiFi secrets
 
@@ -94,7 +94,8 @@ When the device is on your WiFi:
 
 1. Go to **Settings → Devices & Services → ESPHome** and open your device.
 2. Under **Configuration**, set the **Media Player** entity ID (e.g. `media_player.living_room`).
-3. Adjust brightness, timeouts, and other options as in [Settings](/configurable-settings).
+3. **Optional:** If your speaker has a TV source, set the **Sonos Tv Source** entity ID to the TV media player (e.g. `media_player.apple_tv`). See [TV source](/configurable-settings#tv-source).
+4. Adjust brightness, timeouts, and other options as in [Settings](/configurable-settings).
 
 To view device logs (including artwork load errors) in Home Assistant, enable **Subscribe to logs from the device** in the device's **Configure** screen. Logs then appear in **Settings → System → Logs** or **Developer Tools → Logs**.
 

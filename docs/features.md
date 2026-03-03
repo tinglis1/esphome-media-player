@@ -20,6 +20,16 @@ On the 4" panel, when a new track is requested, the overlay (title, artist, time
 
 The 10.1" panel uses a side-panel layout where the track info is always visible alongside the album art, so this setting does not apply.
 
+## TV source mode (optional)
+
+If your speaker has a "TV" source (e.g. Sonos with a home theater setup), the controller can optionally show now-playing info from the TV's media player (e.g. Apple TV, Chromecast) when the speaker's source changes to "TV". This feature is entirely optional and the controller works without it.
+
+- **Automatic switching** — when the primary media player's source becomes "TV", the UI shows title, artist, artwork, and progress from the secondary TV media player. When the source changes back, the UI reverts to the primary player.
+- **Idle state** — when the TV player is idle, off, or on standby, the screen displays "TV" on a black background with playback controls hidden. Controls reappear when the TV player starts playing again.
+- **Routed controls** — play/pause, next, and previous are automatically sent to whichever player is active (music or TV).
+
+To enable this, set the optional **Sonos Tv Source** field in the device's configuration to the entity ID of your TV media player (e.g. `media_player.apple_tv`). Leave it empty to disable. See [Settings](/configurable-settings#tv-source) for details.
+
 ## Touch controls
 
 - **Play / Pause** — button in the bottom-right toggles playback.
