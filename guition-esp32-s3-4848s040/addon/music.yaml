@@ -51,3 +51,34 @@ online_image:
           id: album_art_background_widget
           opa: 40%
       - lvgl.widget.show: artwork_error_label
+
+  - url: "https://placehold.co/480x480/2d2d2d/555555"
+    id: tv_art_background
+    type: rgb565
+    format: jpeg
+    placeholder: album_art_placeholder
+    resize: 480x480
+    on_download_finished:
+      - lvgl.widget.hide: artwork_error_label
+      - lambda: |-
+          auto *w = id(album_art_background_widget);
+          lv_img_set_zoom(w, 256);
+          lv_img_set_offset_x(w, 0);
+          lv_img_set_offset_y(w, 0);
+          lv_obj_set_size(w, 480, 480);
+          lv_obj_set_pos(w, 0, 0);
+      - lvgl.image.update:
+          id: album_art_background_widget
+          src: tv_art_background
+      - lvgl.widget.update:
+          id: album_art_background_widget
+          opa: 100%
+      - script.execute: extract_accent_color
+      - script.execute: start_hide_track_info_timer
+    on_error:
+      - lambda: |-
+          ESP_LOGW("artwork", "TV artwork download failed: %s", id(last_tv_artwork_url).c_str());
+      - lvgl.widget.update:
+          id: album_art_background_widget
+          opa: 40%
+      - lvgl.widget.show: artwork_error_label
