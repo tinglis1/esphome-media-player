@@ -30,11 +30,11 @@ external_components:
 http_request:
   id: http_req
 
-image:
-  - file: "assets/placeholder.png"
-    id: album_art_placeholder
-    type: RGB565
-    byte_order: little_endian
+# image:
+#   - file: "assets/placeholder.png"
+#     id: album_art_placeholder
+#     type: RGB565
+#     byte_order: little_endian
 
 online_image:
   - url: "https://placehold.co/800x800/2d2d2d/555555"
