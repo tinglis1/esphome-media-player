@@ -13,10 +13,10 @@ http_request:
   id: http_req
 
 # Placeholder shown while album art is loading or when no art is available.
-image:
-  - file: "assets/placeholder.png"
-    id: album_art_placeholder
-    type: rgb565
+# image:
+#   - file: "assets/placeholder.png"
+#     id: album_art_placeholder
+#     type: rgb565
 
 # Dynamic album art from media_player entity_picture (URL set by sensors.yaml).
 # Decoded at 480x480 to match the physical display resolution (1:1 pixel mapping).
